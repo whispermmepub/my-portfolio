@@ -34,7 +34,7 @@ const CONFIG = {
     ["YouTube", "https://www.youtube.com/@whisperofwordsebook", "▶️"],
     ["Twitter / X", "https://x.com/whisperw69842", "🐦"],
     ["GitHub", "https://github.com/whispermmepub", "🐙"],
-    ["Review Blog", "https://youthsbookreflections.blogspot.com", "📄"],
+    ["Review Site", "https://whispermmepub.github.io/Review/", "📚"],
   ],
 
   // ── Skills (အမည်, tag) ──

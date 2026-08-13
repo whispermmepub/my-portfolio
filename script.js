@@ -45,6 +45,14 @@ const CONFIG = {
   // ── Projects ──
   projects: [
     {
+      title: "Whisper Of Words Review",
+      desc: "မြန်မာစာအုပ်စာအညွှန်းများစုစည်းမှု — mm Epub book reviews and recommendations.",
+      tags: ["HTML", "Book Reviews"],
+      link: "https://whispermmepub.github.io/Review/",
+      code: "https://github.com/whispermmepub/Review",
+      date: "2026",
+    },
+    {
       title: "Group Guardian Bot",
       desc: "Telegram group management + book search bot — link protection, auto-moderation, action logs, AI chat.",
       tags: ["Python", "Telegram", "AI"],
@@ -304,8 +312,61 @@ function escapeAttr(s) {
   return escapeHtml(s);
 }
 
+/* ── Status bar (live clock + battery) ─────────────────── */
+function updateClock() {
+  const now = new Date();
+  const hh = String(now.getHours()).padStart(2, "0");
+  const mm = String(now.getMinutes()).padStart(2, "0");
+  const timeEl = $("#sb-time");
+  if (timeEl) timeEl.textContent = `${hh}:${mm}`;
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const dateEl = $("#sb-date");
+  if (dateEl) {
+    dateEl.textContent = `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+  }
+}
+
+function setupBattery() {
+  const fill = $("#sb-batt-fill");
+  const txt = $("#sb-batt-txt");
+  if (!fill || !txt) return;
+  const setLevel = (level, charging) => {
+    fill.style.width = `${Math.max(0, Math.min(100, level))}%`;
+    fill.style.background = level <= 20 ? "#d9480f" : "var(--green)";
+    txt.textContent = charging ? `⚡ ${level}%` : `${level}%`;
+  };
+  if (!navigator.getBattery) { setLevel(0, false); return; }
+  navigator.getBattery()
+    .then((battery) => {
+      const refresh = () => setLevel(Math.round(battery.level * 100), battery.charging);
+      refresh();
+      battery.addEventListener("levelchange", refresh);
+      battery.addEventListener("chargingchange", refresh);
+    })
+    .catch(() => setLevel(0, false));
+}
+
+function renderStatusBar() {
+  const nameEl = $("#sb-name");
+  if (nameEl) nameEl.textContent = CONFIG.name;
+  const avatar = $("#sb-avatar");
+  if (avatar) {
+    if (CONFIG.photo) {
+      avatar.src = CONFIG.photo;
+      avatar.onerror = () => avatar.remove();
+    } else {
+      avatar.remove();
+    }
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+  setupBattery();
+}
+
 /* ── Init ────────────────────────────────────────────────── */
 function init() {
+  renderStatusBar();
   renderTabs();
   renderAbout();
   renderSkills();

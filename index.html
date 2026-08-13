@@ -26,6 +26,21 @@
 
     <!-- Main app -->
     <div id="app" class="hidden">
+      <div class="statusbar">
+        <div class="sb-left">
+          <img class="sb-avatar" id="sb-avatar" alt="avatar" />
+          <span class="sb-name" id="sb-name"></span>
+        </div>
+        <div class="sb-center" id="sb-date"></div>
+        <div class="sb-right">
+          <span class="sb-time" id="sb-time"></span>
+          <span class="sb-signal" title="Signal"><i></i><i></i><i></i><i></i></span>
+          <span class="sb-battery">
+            <span class="batt"><span class="fill" id="sb-batt-fill"></span></span>
+            <span class="batt-txt" id="sb-batt-txt"></span>
+          </span>
+        </div>
+      </div>
       <div class="window">
         <div class="titlebar">
           <div class="dots"><span></span><span></span><span></span></div>

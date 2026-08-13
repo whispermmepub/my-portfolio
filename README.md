@@ -1,7 +1,15 @@
 # Portfolio Site (retro terminal style) 🖥️
 
-kaungspace.pages.dev လိုမျိုး — retro terminal boot animation ပါတဲ့ personal portfolio site ပါ။
+Retro terminal boot animation ပါတဲ့ personal portfolio site ပါ။
 Static HTML/CSS/JS သက်သက်မို့ ဘာ framework မှ မလို၊ Cloudflare Pages မှာ free deploy လို့ရတယ်။
+
+
+## Site Links
+
+- **Live (Cloudflare Pages):** https://whisperofwords.pages.dev
+- **Live (GitHub Pages):** https://whispermmepub.github.io/my-portfolio
+- **GitHub repo:** https://github.com/whispermmepub/my-portfolio
+- **Review site:** https://whispermmepub.github.io/Review/ — https://github.com/whispermmepub/Review
 
 ## ဖိုင်ဖွဲ့စည်းပုံ
 
@@ -54,4 +62,4 @@ python3 -m http.server 8000
 
 ## ထပ်လုပ်လို့ရတာတွေ
 - ကိုယ့် domain ချိတ်ချင်ရင် Pages → Custom domains
-- ဓာတ်ပုံကို grayscale → hover ရင် color ပြောင်းပြတယ် (kaungspace လိုပဲ)
+- ဓာတ်ပုံကို grayscale → hover ရင် color ပြောင်းပြတယ်

@@ -194,10 +194,26 @@ function renderAbout() {
   el.innerHTML = `
     <p class="section-label">profile.exe</p>
     <div class="about-top">
-      <div class="avatar">
-        <div class="initials">${initials}</div>
-        <img src="${CONFIG.photo || ""}" alt="${escapeHtml(CONFIG.name)}" onerror="this.remove()" ${CONFIG.photo ? "" : "hidden"}/>
-        <span class="online" title="Online"></span>
+      <div class="avatar-frame">
+        <svg class="avatar-ring" viewBox="0 0 190 190" aria-hidden="true">
+          <defs>
+            <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f7df8a"/>
+              <stop offset="25%" stop-color="#e9b93b"/>
+              <stop offset="50%" stop-color="#f9e6a0"/>
+              <stop offset="75%" stop-color="#d99b1f"/>
+              <stop offset="100%" stop-color="#f0cd62"/>
+            </linearGradient>
+          </defs>
+          <circle cx="95" cy="95" r="86" fill="none" stroke="url(#goldGrad)" stroke-width="7"/>
+          <circle cx="95" cy="95" r="77" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity=".7"/>
+          ${goldOrnaments()}
+        </svg>
+        <div class="avatar">
+          <div class="initials">${initials}</div>
+          <img src="${CONFIG.photo || ""}" alt="${escapeHtml(CONFIG.name)}" onerror="this.remove()" ${CONFIG.photo ? "" : "hidden"}/>
+          <span class="online" title="Online"></span>
+        </div>
       </div>
       <div class="about-meta">
         <div class="about-name"><span id="type-name"></span><span class="caret"></span></div>
@@ -312,6 +328,24 @@ function escapeHtml(s) {
 }
 function escapeAttr(s) {
   return escapeHtml(s);
+}
+
+/* ── Gold Myanmar art ring ornaments ───────────────────── */
+function goldOrnaments() {
+  const parts = [];
+  for (let i = 0; i < 12; i++) {
+    const a = (i * 30 * Math.PI) / 180;
+    const cx = 95 + 95.5 * Math.cos(a);
+    const cy = 95 + 95.5 * Math.sin(a);
+    parts.push(
+      `<path d="M${cx.toFixed(1)} ${(cy - 6).toFixed(1)} L${(cx + 4.2).toFixed(1)} ${cy.toFixed(1)} L${cx.toFixed(1)} ${(cy + 6).toFixed(1)} L${(cx - 4.2).toFixed(1)} ${cy.toFixed(1)} Z" fill="url(#goldGrad)"/>`
+    );
+    const b = a + (15 * Math.PI) / 180;
+    const bx = 95 + 95.5 * Math.cos(b);
+    const by = 95 + 95.5 * Math.sin(b);
+    parts.push(`<circle cx="${bx.toFixed(1)}" cy="${by.toFixed(1)}" r="2.4" fill="#e9b93b" opacity=".9"/>`);
+  }
+  return parts.join("");
 }
 
 /* ── Status bar (live clock + battery) ─────────────────── */

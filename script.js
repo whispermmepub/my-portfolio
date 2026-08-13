@@ -20,7 +20,9 @@ const CONFIG = {
     facebook: "https://www.facebook.com/mmebookwhisper/",
     youtube: "https://www.youtube.com/@whisperofwordsebook",
     twitter: "https://x.com/whisperw69842",
-    website: "",
+    telegram: "https://t.me/TheBookR",
+    telegram_bot: "https://t.me/grouphelpwhisper_bot",
+    website: "https://saroatsin.com",
   },
 
   // ── Skills (အမည်, tag) ──

@@ -50,7 +50,7 @@ const CONFIG = {
       title: "Whisper Of Words Review",
       desc: "မြန်မာစာအုပ်စာအညွှန်းများစုစည်းမှု — mm Epub book reviews and recommendations.",
       tags: ["HTML", "Book Reviews"],
-      link: "https://whispermmepub.github.io/Review/",
+      link: "https://whisperofwords-review.pages.dev",
       code: "https://github.com/whispermmepub/Review",
       date: "2026",
     },

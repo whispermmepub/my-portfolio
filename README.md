@@ -9,7 +9,8 @@ Static HTML/CSS/JS သက်သက်မို့ ဘာ framework မှ မလ
 - **Live (Cloudflare Pages):** https://whisperofwords.pages.dev
 - **Live (GitHub Pages):** https://whispermmepub.github.io/my-portfolio
 - **GitHub repo:** https://github.com/whispermmepub/my-portfolio
-- **Review site:** https://whispermmepub.github.io/Review/ — https://github.com/whispermmepub/Review
+- **Review site (Cloudflare Pages):** https://whisperofwords-review.pages.dev
+- **Review site (GitHub Pages):** https://whispermmepub.github.io/Review/ — https://github.com/whispermmepub/Review
 
 ## ဖိုင်ဖွဲ့စည်းပုံ
 

@@ -25,6 +25,18 @@ const CONFIG = {
     website: "https://saroatsin.com",
   },
 
+  // ── Quick links (about tab) ──
+  links: [
+    ["Telegram Channel", "https://t.me/TheBookR", "📢"],
+    ["Telegram Bot", "https://t.me/grouphelpwhisper_bot", "🤖"],
+    ["Website", "https://saroatsin.com", "🌐"],
+    ["Facebook", "https://www.facebook.com/mmebookwhisper/", "👍"],
+    ["YouTube", "https://www.youtube.com/@whisperofwordsebook", "▶️"],
+    ["Twitter / X", "https://x.com/whisperw69842", "🐦"],
+    ["GitHub", "https://github.com/whispermmepub", "🐙"],
+    ["Review Blog", "https://youthsbookreflections.blogspot.com", "📄"],
+  ],
+
   // ── Skills (အမည်, tag) ──
   skills: {
     Frontend: [
@@ -222,6 +234,13 @@ function renderAbout() {
       </div>
     </div>
     <p class="about-bio">${escapeHtml(CONFIG.bio)}</p>
+    <div class="about-links">
+      ${CONFIG.links.map(([label, href, icon]) => `
+        <a class="mini-link" href="${escapeAttr(href)}" target="_blank" rel="noopener">
+          <span class="mini-icon">${icon}</span>
+          <span class="mini-label">${escapeHtml(label)}</span>
+        </a>`).join("")}
+    </div>
     <div class="chip-row" id="about-chips"></div>
     ${CONFIG.email ? `
     <div class="email-row">

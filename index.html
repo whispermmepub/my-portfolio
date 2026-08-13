@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aung Soe Moe | Whisper Of Words Mmepub</title>
+    <meta name="description" content="Whisper Of Words Mmepub — free high-quality Myanmar e-books (EPUB, KFX), Telegram bots, and web tools." />
+    <meta property="og:title" content="Aung Soe Moe | Whisper Of Words Mmepub" />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Boot screen -->
+    <div id="boot" aria-hidden="false">
+      <div class="boot-card">
+        <div id="boot-lines"></div>
+        <div id="boot-hint">press any key to skip</div>
+      </div>
+    </div>
+
+    <!-- Main app -->
+    <div id="app" class="hidden">
+      <div class="window">
+        <div class="titlebar">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <div class="win-title">~/portfolio — <span id="win-title"></span></div>
+        </div>
+        <div class="layout">
+          <nav id="tabs" aria-label="Sections"></nav>
+          <main id="content">
+            <section id="tab-about" class="panel active" data-title="about.exe"></section>
+            <section id="tab-skills" class="panel" data-title="skills.exe"></section>
+            <section id="tab-projects" class="panel" data-title="projects.exe"></section>
+            <section id="tab-contact" class="panel" data-title="contact.exe"></section>
+            <section id="tab-education" class="panel" data-title="education.exe"></section>
+          </main>
+        </div>
+      </div>
+      <footer id="site-footer"></footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
